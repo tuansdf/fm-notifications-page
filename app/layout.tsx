@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { primaryFont } from "/app/fonts";
 import "/styles/globals.css";
 
 interface IProps {
@@ -11,8 +12,8 @@ export default function Layout({ children }: IProps) {
       <head>
         <title>Notifications Page - Frontend Mentor - Tuan Nguyen</title>
       </head>
-      <body>
-        <main>{children}</main>
+      <body className={primaryFont.className + " text-dark-grayish-blue"}>
+        <main className="mx-auto max-w-sm">{children}</main>
       </body>
     </html>
   );
