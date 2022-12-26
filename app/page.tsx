@@ -11,7 +11,7 @@ import imgChess from "/public/image-chess.webp";
 
 export default function Page() {
   return (
-    <div className="rounded-xl bg-white lg:p-8 lg:drop-shadow-2xl">
+    <div className="mt-8 rounded-xl bg-white lg:p-8 lg:drop-shadow-2xl">
       <div className="my-8 flex items-baseline justify-between lg:mt-0">
         <div className="space-x-2">
           <span className="text-2xl font-bold text-very-dark-blue">
@@ -22,7 +22,7 @@ export default function Page() {
           </span>
         </div>
 
-        <button>Mark all as read</button>
+        <button className="hover:text-blue">Mark all as read</button>
       </div>
 
       <div className="space-y-2">

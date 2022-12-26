@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
+import Link from "next/link";
 
 interface IProps {
   profileSrc: any;
@@ -24,7 +25,7 @@ export default function NotificationCard({
 }: IProps) {
   return (
     <div
-      className={clsx("flex gap-4 rounded-md p-4", {
+      className={clsx("flex gap-4 rounded-lg p-4", {
         "bg-very-light-grayish-blue": !isRead,
       })}
     >
@@ -38,10 +39,16 @@ export default function NotificationCard({
         <div className="flex w-full justify-between gap-4">
           <div>
             <p className="space-x-2">
-              <span className="font-bold text-very-dark-blue">{person}</span>
+              <Link href="#">
+                <span className="font-bold text-very-dark-blue hover:text-blue">
+                  {person}
+                </span>
+              </Link>
               <span className="font-medium">{action}</span>
               {target ? (
-                <span className="font-bold text-blue">{target}</span>
+                <Link href="#">
+                  <span className="font-bold text-blue">{target}</span>
+                </Link>
               ) : null}
               {!isRead ? (
                 <span className="inline-block h-2 w-2 rounded-full bg-red align-middle"></span>
@@ -51,13 +58,17 @@ export default function NotificationCard({
           </div>
 
           {extraSrc ? (
-            <Image src={extraSrc} alt="" className="h-12 w-12" />
+            <Image
+              src={extraSrc}
+              alt=""
+              className="h-12 w-12 cursor-pointer rounded-lg hover:ring-2 hover:ring-light-grayish-blue-2 hover:ring-offset-1"
+            />
           ) : null}
         </div>
 
         {/* detail */}
         {message ? (
-          <p className="mt-4 rounded-md border border-light-grayish-blue-2 p-4">
+          <p className="mt-4 cursor-pointer rounded-md border border-light-grayish-blue-1 p-4 transition-colors duration-100 hover:bg-light-grayish-blue-1">
             {message}
           </p>
         ) : null}
