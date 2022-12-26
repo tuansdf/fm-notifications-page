@@ -12,8 +12,10 @@ export default function Layout({ children }: IProps) {
       <head>
         <title>Notifications Page - Frontend Mentor - Tuan Nguyen</title>
       </head>
-      <body className={primaryFont.className + " text-dark-grayish-blue"}>
-        <main className="mx-auto max-w-sm">{children}</main>
+      <body
+        className={primaryFont.className + " bg-white text-dark-grayish-blue"}
+      >
+        <main className="mx-auto max-w-sm lg:max-w-3xl">{children}</main>
       </body>
     </html>
   );

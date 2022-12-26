@@ -24,7 +24,7 @@ export default function NotificationCard({
 }: IProps) {
   return (
     <div
-      className={clsx("flex gap-4 rounded p-4", {
+      className={clsx("flex gap-4 rounded-md p-4", {
         "bg-very-light-grayish-blue": !isRead,
       })}
     >
@@ -34,24 +34,26 @@ export default function NotificationCard({
         className="h-12 w-12 flex-none rounded-full"
       />
 
-      <div>
-        <div className="flex gap-4">
-          <p className="space-x-2">
-            <span className="font-bold text-very-dark-blue">{person}</span>
-            <span className="font-medium">{action}</span>
-            {target ? (
-              <span className="font-bold text-blue">{target}</span>
-            ) : null}
-            {!isRead ? (
-              <span className="inline-block h-2 w-2 rounded-full bg-red align-middle"></span>
-            ) : null}
-          </p>
+      <div className="w-full">
+        <div className="flex w-full justify-between gap-4">
+          <div>
+            <p className="space-x-2">
+              <span className="font-bold text-very-dark-blue">{person}</span>
+              <span className="font-medium">{action}</span>
+              {target ? (
+                <span className="font-bold text-blue">{target}</span>
+              ) : null}
+              {!isRead ? (
+                <span className="inline-block h-2 w-2 rounded-full bg-red align-middle"></span>
+              ) : null}
+            </p>
+            <div className="text-grayish-blue">{time}</div>
+          </div>
 
           {extraSrc ? (
             <Image src={extraSrc} alt="" className="h-12 w-12" />
           ) : null}
         </div>
-        <div className="text-grayish-blue">{time}</div>
 
         {/* detail */}
         {message ? (

@@ -11,8 +11,8 @@ import imgChess from "/public/image-chess.webp";
 
 export default function Page() {
   return (
-    <>
-      <div className="my-8 flex items-baseline justify-between">
+    <div className="rounded-xl bg-white lg:p-8 lg:drop-shadow-2xl">
+      <div className="my-8 flex items-baseline justify-between lg:mt-0">
         <div className="space-x-2">
           <span className="text-2xl font-bold text-very-dark-blue">
             Notifications
@@ -82,6 +82,6 @@ export default function Page() {
           time="2 weeks ago"
         />
       </div>
-    </>
+    </div>
   );
 }
